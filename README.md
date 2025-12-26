@@ -16,5 +16,4 @@ What we know so far:
            - whitespace
         
         The best way to understand parser is to look at context free grammar because it provides
-        a better visual to how this works. Context free grammar is exactly what a compiler is
-        going through when compiling.
+        a better visual to how this works.

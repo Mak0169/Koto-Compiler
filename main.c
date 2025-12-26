@@ -6,11 +6,13 @@ typedef struct {
 
 } tokenIdentifier;
 
-typedef struct {
+typedef enum {
 
-} tokenOperator;
+} tokenKeyWord;
 
-
+typedef enum {
+    
+} tokenSeperator;
 
 int main() {
     
