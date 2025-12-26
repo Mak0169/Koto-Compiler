@@ -8,7 +8,7 @@ typedef struct {
 
 typedef struct {
 
-}
+} tokenOperator;
 
 
 
