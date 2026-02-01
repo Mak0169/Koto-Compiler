@@ -14,7 +14,11 @@ int main(int argc, char **argv) {
         fprintf(stderr, "Could not open file", argv[1]);
         return 1;
     }
-
+    
+    Token tok;
+    while (next_token(fileOp, &tok)) {
+        token_print(&tok);
+    }
     fclose(fileOp);
     return 0;
 }
