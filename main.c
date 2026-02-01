@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "token.h"
 
+// comment
 int main(int argc, char **argv) {
     if (argc < 2) {
         fprintf(stderr, "Usage: %s\n", argv[0]);
