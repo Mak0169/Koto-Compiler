@@ -1,7 +1,7 @@
-#ifndef TOKEN_H
+#ifdef TOKEN_H
 #define TOKEN_H
 
-typdef enum {
+typedef enum {
     TOKEN_EOF,
     TOKEN_IDENTIFIER,
     TOKEN_NUMBER,
@@ -9,12 +9,12 @@ typdef enum {
     TOKEN_SEPERATOR
 } TokenType;
 
-typdef enum {
+typedef enum {
     KW_LET,
     KW_PRINT
 } TokenKeyword;
 
-typdef enum {
+typedef enum {
     SEP_SEMI,
     SEP_PLUS,
     SEP_MINUS,
@@ -23,7 +23,7 @@ typdef enum {
     SEP_EQ
 } TokenSeperator;
 
-typdef struct {
+typedef struct {
     TokenType type;
     union {
         int num;
@@ -37,5 +37,4 @@ typdef struct {
 
 void token_print(const Token *t);
 void token_free(Token *t);
-
 #endif

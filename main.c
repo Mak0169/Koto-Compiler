@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "token.h"
 
 int main(int argc, char **argv) {
     if (argc < 2) {
@@ -7,7 +8,13 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    char *src = read_file(argc[1]);
+    FILE *fileOp = fopen(argv[1], "r");
+    if (!fileOp) {
+        fprintf(stderr, "Could not open file", argv[1]);
+        return 1;
+    }
 
+    fclose(fileOp);
+    return 0;
 }
 
