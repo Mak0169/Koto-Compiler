@@ -9,12 +9,7 @@ int next_token(FILE *fileOp, Token *tok) {
     int lineCount = 0;
     
     while ((c = fgetc(fp)) != EOF) {
-        if (c == '\n') {
-             lineCount++;
-        }
-        if (c == ' ' | c == '\t') {
-            continue;
-        }
+        if (c == ' '|| c == '\t'|| c == '\n') { continue; }
         break;
     }
 
@@ -22,5 +17,18 @@ int next_token(FILE *fileOp, Token *tok) {
         tok->type = TOKEN_EOF;
         return 0;
     }
+
+    if (isAlpha(c) || c == '_') {
+        char buf[256];
+        int i = 0;
+
+        buf[256] = c;
+        while ((c = fgetc(fileOp)) != EOF &&* (isalnum(c) || c == '_')) {
+            if (i < 256) {
+                buf[i++] = c;
+            }
+        }
+    }
+    buf[i] = '\0';
     return 1;
 }
