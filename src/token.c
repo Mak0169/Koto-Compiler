@@ -5,3 +5,11 @@
 void token_print(const Token *t) {
     // Going to put code later here. Just need the template because I put it in main.
 }
+
+void token_free(Token *t) {
+    if (t->type == TOKEN_IDENTIFIER) {
+        free(t->identifier);
+        t->identifier = NULL;
+    }
+    
+}

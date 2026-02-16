@@ -30,5 +30,7 @@ int next_token(FILE *fileOp, Token *tok) {
         }
     }
     buf[i] = '\0';
-    return 1;
+    fprintf(stderr, "error: unexpected character %c at line %d, column %d\n",
+            c, line, col);
+    return -1;
 }

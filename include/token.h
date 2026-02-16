@@ -6,7 +6,8 @@ typedef enum {
     TOKEN_IDENTIFIER,
     TOKEN_NUMBER,
     TOKEN_KEYWORD,
-    TOKEN_SEPERATOR
+    TOKEN_SEPERATOR,
+    TOKEN_STRING
 } TokenType;
 
 typedef enum {
@@ -28,6 +29,7 @@ typedef struct {
     union {
         int num;
         char *identifier;
+        char *string;
         TokenKeyword keyword;
         TokenSeperator seperator;
     };
